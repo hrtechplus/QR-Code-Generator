@@ -5,16 +5,23 @@ import InputField from "./InputField";
 
 export default function CenteredBox() {
   return (
-    <Center h="100vh">
-      <Box px={8} py={12} boxShadow="xs" rounded="md">
-        <Flex color="white">
-          <Center w="100px" bg="green.500">
+    <Center>
+      <Box
+        px={[4, 8]} // Responsive padding on the x-axis
+        py={[6, 12]} // Responsive padding on the y-axis
+        boxShadow="xs"
+        rounded="md"
+        maxW="md" // Set maximum width for better mobile responsiveness
+        w="100%" // Make sure the box takes the full width
+      >
+        <Flex direction="column" align="center">
+          <Center w="100%" bg="green.500" mb={4}>
             <Text>Box 1</Text>
           </Center>
-          <Square bg="blue.500" size="150px">
+          <Square bg="blue.500" size={["100px", "150px"]} mb={4}>
             <Text>Box 2</Text>
           </Square>
-          <Box flex="1" bg="tomato">
+          <Box w="100%" bg="tomato">
             <Text>Box 3</Text>
           </Box>
         </Flex>
