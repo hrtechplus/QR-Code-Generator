@@ -5,7 +5,7 @@ import InputField from "./InputField";
 
 export default function CenteredBox() {
   return (
-    <Center>
+    <Center minH="100vh">
       <Box
         px={[2, 4, 8]} // Responsive padding on the x-axis
         py={[4, 6, 12]} // Responsive padding on the y-axis
@@ -17,7 +17,7 @@ export default function CenteredBox() {
         <Flex
           direction={["column", "column", "row"]}
           align="center"
-          justify={"center"}
+          justify={"space-around"}
           gap={[4, 4, 0]} // Adjust the gap for spacing on smaller screens
         >
           <Center
@@ -25,6 +25,7 @@ export default function CenteredBox() {
             bg="green.500"
             mb={[4, 4, 0]} // Adjust margin-bottom for spacing on smaller screens
           >
+            {/* // METHANA THAMAI OKKOMA COMPENETS THIENNE */}
             <Text>Box 1</Text>
           </Center>
           <Square
