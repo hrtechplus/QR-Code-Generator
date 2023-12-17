@@ -1,18 +1,24 @@
 import React from "react";
-import { Button, Stack, Row, Col, Container } from "react-bootstrap";
-export default function () {
+import { Flex, Center, Square, Text, Box } from "@chakra-ui/react";
+import QRImg from "./QRImg";
+import InputField from "./InputField";
+
+export default function CenteredBox() {
   return (
-    <div className=" container-sm rounded shadow-sm  position-absolute top-50 start-50 translate-middle bg-danger   ">
-      <Container className="mx-auto my-5  ">
-        <Row className="justify-content-around">
-          <Col sm={1} className="bg-primary">
-            1 of 2
-          </Col>
-          <Col sm={2} className="bg-secondary">
-            2 of 2
-          </Col>
-        </Row>
-      </Container>
-    </div>
+    <Center h="100vh">
+      <Box px={8} py={12} boxShadow="xs" rounded="md">
+        <Flex color="white">
+          <Center w="100px" bg="green.500">
+            <Text>Box 1</Text>
+          </Center>
+          <Square bg="blue.500" size="150px">
+            <Text>Box 2</Text>
+          </Square>
+          <Box flex="1" bg="tomato">
+            <Text>Box 3</Text>
+          </Box>
+        </Flex>
+      </Box>
+    </Center>
   );
 }
