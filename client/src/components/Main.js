@@ -3,11 +3,13 @@ import { Flex, Center, Square, Text, Box } from "@chakra-ui/react";
 import QRImg from "./QRImg";
 import InputField from "./InputField";
 import Form from "./Form";
+import "./Main.css";
 
 export default function CenteredBox() {
   return (
     <Center minH="100vh">
       <Box
+        className="MainContainer"
         px={[2, 4, 8]} // Responsive padding on the x-axis
         py={[4, 6, 12]} // Responsive padding on the y-axis
         boxShadow="md"
