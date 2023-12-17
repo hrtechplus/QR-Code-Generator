@@ -51,13 +51,6 @@ export default function QRCodeGeneratorForm() {
           />
         </FormControl>
 
-        <Checkbox
-          mb={4}
-          onChange={() => setAdvancedSettings(!advancedSettings)}
-        >
-          Show Advanced Settings
-        </Checkbox>
-
         <Tabs isFitted variant="enclosed">
           <TabList mb={4}>
             <Tab>Basic Settings</Tab>
@@ -68,6 +61,7 @@ export default function QRCodeGeneratorForm() {
               <FormControl mb={4}>
                 <FormLabel>Image URI (Optional)</FormLabel>
                 <Input
+                  className="input"
                   placeholder="Enter image URI"
                   value={imageUri}
                   onChange={(e) => setImageUri(e.target.value)}
@@ -89,6 +83,7 @@ export default function QRCodeGeneratorForm() {
                 </Select>
                 {size === "custom" && (
                   <Input
+                    className="input"
                     mt={2}
                     placeholder="Enter custom size"
                     type="number"
@@ -128,6 +123,7 @@ export default function QRCodeGeneratorForm() {
               <FormControl mb={4}>
                 <FormLabel>Background Color</FormLabel>
                 <Input
+                  className="input"
                   type="color"
                   value={backgroundColor}
                   onChange={(e) => setBackgroundColor(e.target.value)}
