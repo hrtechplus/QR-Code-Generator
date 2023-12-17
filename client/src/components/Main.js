@@ -1,7 +1,8 @@
 import React from "react";
-import { Flex, Center, Box, Square, Container } from "@chakra-ui/react";
+import { Flex, Center, Box, Square, Container, Link } from "@chakra-ui/react";
 import ImgComponent from "./ImgComponent";
 import Form from "./Form";
+import LinkBtn from "./LinkBtn";
 import "./Main.css";
 
 export default function CenteredBox() {
@@ -23,7 +24,16 @@ export default function CenteredBox() {
             w={["100%", "100%", "40%"]} // Adjust the width for different screen sizes
             mb={[4, 4, 0]} // Adjust margin-bottom for spacing on smaller screens
           >
-            <ImgComponent />
+            <Flex direction="column">
+              <ImgComponent />
+              <Center mt={4}>
+                <Flex maxW={"300px"} justify={"center"}>
+                  <LinkBtn />
+                  <LinkBtn />
+                  <LinkBtn />
+                </Flex>
+              </Center>
+            </Flex>
           </Center>
           <Container
             size={["100%", "150px", "150px"]} // Adjust the size for different screen sizes

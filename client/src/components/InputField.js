@@ -1,9 +1,23 @@
 import React from "react";
 import { Box, Input } from "@chakra-ui/react";
-export default function (placeholder, type, value) {
+export default function InputField({
+  placeholder,
+  type,
+  name,
+  value,
+  onChange,
+  size = "sm",
+}) {
   return (
     <Box>
-      <Input placeholder={placeholder} type={type} value={value} />
+      <Input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        size={size}
+        placeholder={placeholder}
+      />
     </Box>
   );
 }

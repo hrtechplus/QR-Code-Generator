@@ -18,6 +18,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import InputField from "./InputField";
 
 export default function QRCodeForm() {
   const [formData, setFormData] = useState({
@@ -54,7 +55,7 @@ export default function QRCodeForm() {
       <form onSubmit={handleFormSubmit}>
         <FormControl isRequired mb={2}>
           <FormLabel fontSize="sm">Data</FormLabel>
-          <Input
+          <InputField
             type="text"
             name="data"
             value={formData.data}
