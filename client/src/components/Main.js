@@ -1,7 +1,8 @@
 import React from "react";
-import { Flex, Center, Square, Text, Box } from "@chakra-ui/react";
+import { Flex, Center, Square, Text, Box, Img } from "@chakra-ui/react";
 import QRImg from "./QRImg";
 import InputField from "./InputField";
+import ImgComponent from "./ImgComponent";
 import Form from "./Form";
 import "./Main.css";
 
@@ -25,12 +26,11 @@ export default function CenteredBox() {
         >
           <Center
             w={["100%", "100%", "20%"]} // Adjust the width for different screen sizes
-            bg="green.500"
             mb={[4, 4, 0]} // Adjust margin-bottom for spacing on smaller screens
           >
             {/* // METHANA THAMAI OKKOMA COMPENETS THIENNE */}
 
-            <Text>Box 1</Text>
+            <ImgComponent />
           </Center>
           <Square
             bg="blue.500"
