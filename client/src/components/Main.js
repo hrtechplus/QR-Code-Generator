@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Center, Box, Square } from "@chakra-ui/react";
+import { Flex, Center, Box, Square, Container } from "@chakra-ui/react";
 import ImgComponent from "./ImgComponent";
 import Form from "./Form";
 
@@ -26,12 +26,11 @@ export default function CenteredBox() {
           >
             <ImgComponent />
           </Center>
-          <Square
-            bg="blue.500"
+          <Container
             size={["100%", "150px", "150px"]} // Adjust the size for different screen sizes
           >
             <Form />
-          </Square>
+          </Container>
         </Flex>
       </Box>
     </Center>
