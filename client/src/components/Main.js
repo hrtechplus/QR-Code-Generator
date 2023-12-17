@@ -6,7 +6,7 @@ import "./Main.css";
 
 export default function CenteredBox() {
   return (
-    <Center minH="100vh">
+    <Center minH="100vh" bg={"#e6e6e6"}>
       <Box
         className="MainContainer"
         p={[2, 4, 8]} // Responsive padding

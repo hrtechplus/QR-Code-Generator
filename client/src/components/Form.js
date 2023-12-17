@@ -44,6 +44,7 @@ export default function QRCodeGeneratorForm() {
         <FormControl mb={4} isRequired>
           <FormLabel>Data</FormLabel>
           <Input
+            className="input"
             placeholder="Enter data"
             value={data}
             onChange={(e) => setData(e.target.value)}
