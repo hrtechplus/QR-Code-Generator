@@ -1,176 +1,178 @@
 import React, { useState } from "react";
-import "./Form.css";
 import {
   Box,
   Button,
-  ChakraProvider,
-  Input,
   FormControl,
   FormLabel,
-  FormHelperText,
+  Input,
   Select,
-  Tabs,
-  TabList,
+  Slider,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderTrack,
   Tab,
-  TabPanels,
+  TabList,
   TabPanel,
-  Stack,
-  RadioGroup,
-  Radio,
-  Checkbox,
+  TabPanels,
+  Tabs,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
 
-export default function QRCodeGeneratorForm() {
-  const [data, setData] = useState("");
-  const [imageUri, setImageUri] = useState("icon://appstore");
-  const [innerEye, setInnerEye] = useState("circle");
-  const [outerEye, setOuterEye] = useState("circle");
-  const [backgroundColor, setBackgroundColor] = useState("#000000");
-  const [size, setSize] = useState(200);
-  const [quietZone, setQuietZone] = useState(4);
-  const [errorCorrection, setErrorCorrection] = useState("M");
-  const [filename, setFilename] = useState("qrcode");
-  const [format, setFormat] = useState("png");
-  const [advancedSettings, setAdvancedSettings] = useState(false);
+export default function QRCodeForm() {
+  const [formData, setFormData] = useState({
+    data: "",
+    imageUri: "icon://appstore",
+    innerEye: "circle",
+    outerEye: "circle",
+    backgroundColor: "black",
+    size: 200,
+    format: "png",
+  });
 
-  const handleGenerateQRCode = () => {
-    // Implement QR code generation logic here
-    // You can access the form input values from the state variables
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSliderChange = (value) => {
+    setFormData({ ...formData, size: value });
+  };
+
+  const handleAdvancedChange = (name, value) => {
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // Add logic for handling form submission
+    console.log(formData);
   };
 
   return (
-    <ChakraProvider>
-      <Box p={4} maxW="md" rounded={"lg"} mx="auto" className="Form">
-        <FormControl mb={4} isRequired>
-          <FormLabel>Data</FormLabel>
+    <Box p={2} maxW="300px" mx="auto">
+      <form onSubmit={handleFormSubmit}>
+        <FormControl isRequired mb={2}>
+          <FormLabel fontSize="sm">Data</FormLabel>
           <Input
-            className="input"
+            type="text"
+            name="data"
+            value={formData.data}
+            onChange={handleInputChange}
+            size="sm"
             placeholder="Enter data"
-            value={data}
-            onChange={(e) => setData(e.target.value)}
           />
         </FormControl>
 
-        <Tabs isFitted variant="enclosed">
-          <TabList mb={4}>
-            <Tab>Basic Settings</Tab>
-            <Tab>Advanced Settings</Tab>
+        <Tabs variant="enclosed-colored" isLazy size="sm">
+          <TabList>
+            <Tab fontSize="sm">Basic Settings</Tab>
+            <Tab fontSize="sm">Advanced Settings</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
-              <FormControl mb={4}>
-                <FormLabel>Image URI (Optional)</FormLabel>
-                <Input
-                  className="input"
-                  placeholder="Enter image URI"
-                  value={imageUri}
-                  onChange={(e) => setImageUri(e.target.value)}
-                />
-              </FormControl>
-
-              <FormControl mb={4}>
-                <FormLabel>Size</FormLabel>
-                <Select
-                  value={size}
-                  onChange={(e) => setSize(Number(e.target.value))}
-                >
-                  {[200, 400, 800, 1000].map((option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                  <option value="custom">Custom</option>
-                </Select>
-                {size === "custom" && (
+              <VStack spacing={2}>
+                <FormControl>
+                  <FormLabel fontSize="sm">Image URI</FormLabel>
                   <Input
-                    className="input"
-                    mt={2}
-                    placeholder="Enter custom size"
-                    type="number"
-                    value={size}
-                    onChange={(e) => setSize(Number(e.target.value))}
+                    type="text"
+                    name="imageUri"
+                    value={formData.imageUri}
+                    onChange={handleInputChange}
+                    size="sm"
+                    placeholder="Enter image URI"
                   />
-                )}
-              </FormControl>
+                </FormControl>
+              </VStack>
             </TabPanel>
             <TabPanel>
-              <FormControl mb={4}>
-                <FormLabel>Inner Eye</FormLabel>
-                <RadioGroup
-                  value={innerEye}
-                  onChange={(value) => setInnerEye(value)}
-                >
-                  <Stack direction="row">
-                    <Radio value="circle">Circle</Radio>
-                    <Radio value="square">Square</Radio>
-                  </Stack>
-                </RadioGroup>
-              </FormControl>
+              <VStack spacing={2}>
+                <FormControl>
+                  <FormLabel fontSize="sm">Inner Eye Style</FormLabel>
+                  <Select
+                    name="innerEye"
+                    value={formData.innerEye}
+                    onChange={(e) =>
+                      handleAdvancedChange("innerEye", e.target.value)
+                    }
+                    size="sm"
+                  >
+                    <option value="circle">Circle</option>
+                    <option value="square">Square</option>
+                  </Select>
+                </FormControl>
 
-              <FormControl mb={4}>
-                <FormLabel>Outer Eye</FormLabel>
-                <RadioGroup
-                  value={outerEye}
-                  onChange={(value) => setOuterEye(value)}
-                >
-                  <Stack direction="row">
-                    <Radio value="circle">Circle</Radio>
-                    <Radio value="square">Square</Radio>
-                  </Stack>
-                </RadioGroup>
-              </FormControl>
+                <FormControl>
+                  <FormLabel fontSize="sm">Outer Eye Style</FormLabel>
+                  <Select
+                    name="outerEye"
+                    value={formData.outerEye}
+                    onChange={(e) =>
+                      handleAdvancedChange("outerEye", e.target.value)
+                    }
+                    size="sm"
+                  >
+                    <option value="circle">Circle</option>
+                    <option value="square">Square</option>
+                  </Select>
+                </FormControl>
 
-              <FormControl mb={4}>
-                <FormLabel>Background Color</FormLabel>
-                <Input
-                  className="input"
-                  type="color"
-                  value={backgroundColor}
-                  onChange={(e) => setBackgroundColor(e.target.value)}
-                />
-              </FormControl>
+                <FormControl>
+                  <FormLabel fontSize="sm">Background Color</FormLabel>
+                  <Input
+                    type="color"
+                    name="backgroundColor"
+                    value={formData.backgroundColor}
+                    onChange={handleInputChange}
+                    size="sm"
+                  />
+                </FormControl>
 
-              <FormControl mb={4}>
-                <FormLabel>Error Correction</FormLabel>
-                <Select
-                  value={errorCorrection}
-                  onChange={(e) => setErrorCorrection(e.target.value)}
-                >
-                  <option value="L">Low</option>
-                  <option value="M">Medium</option>
-                  <option value="Q">Quartile</option>
-                  <option value="H">High</option>
-                </Select>
-              </FormControl>
+                <FormControl>
+                  <FormLabel fontSize="sm">Size</FormLabel>
+                  <Slider
+                    name="size"
+                    min={200}
+                    max={1000}
+                    step={200}
+                    defaultValue={200}
+                    value={formData.size}
+                    onChange={handleSliderChange}
+                  >
+                    <SliderTrack>
+                      <SliderFilledTrack />
+                    </SliderTrack>
+                    <SliderThumb boxSize={4} />
+                  </Slider>
+                  <Text fontSize="xs" textAlign="center">
+                    {formData.size}px
+                  </Text>
+                </FormControl>
 
-              <FormControl mb={4}>
-                <FormLabel>Filename</FormLabel>
-                <Input
-                  placeholder="Enter filename"
-                  value={filename}
-                  onChange={(e) => setFilename(e.target.value)}
-                />
-              </FormControl>
-
-              <FormControl mb={4}>
-                <FormLabel>Format</FormLabel>
-                <Select
-                  value={format}
-                  onChange={(e) => setFormat(e.target.value)}
-                >
-                  <option value="svg">SVG</option>
-                  <option value="jpg">JPG</option>
-                  <option value="png">PNG</option>
-                </Select>
-              </FormControl>
+                <FormControl>
+                  <FormLabel fontSize="sm">Format</FormLabel>
+                  <Select
+                    name="format"
+                    value={formData.format}
+                    onChange={(e) =>
+                      handleAdvancedChange("format", e.target.value)
+                    }
+                    size="sm"
+                  >
+                    <option value="png">PNG</option>
+                    <option value="jpg">JPG</option>
+                    <option value="svg">SVG</option>
+                  </Select>
+                </FormControl>
+              </VStack>
             </TabPanel>
           </TabPanels>
         </Tabs>
 
-        <Button colorScheme="teal" onClick={handleGenerateQRCode}>
+        <Button type="submit" colorScheme="teal" size="sm" mt={2}>
           Generate QR Code
         </Button>
-      </Box>
-    </ChakraProvider>
+      </form>
+    </Box>
   );
 }
