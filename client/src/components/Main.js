@@ -2,6 +2,7 @@ import React from "react";
 import { Flex, Center, Box, Square, Container } from "@chakra-ui/react";
 import ImgComponent from "./ImgComponent";
 import Form from "./Form";
+import "./Main.css";
 
 export default function CenteredBox() {
   return (
@@ -9,8 +10,6 @@ export default function CenteredBox() {
       <Box
         className="MainContainer"
         p={[2, 4, 8]} // Responsive padding
-        boxShadow="md"
-        rounded="md"
         maxW={["100%", "400px", "600px"]} // Set maximum width for responsiveness
         w="100%" // Take the full width
       >

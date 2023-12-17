@@ -1,165 +1,179 @@
 import React, { useState } from "react";
+import "./Form.css";
 import {
   Box,
+  Button,
+  ChakraProvider,
+  Input,
   FormControl,
   FormLabel,
-  Input,
+  FormHelperText,
   Select,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+  Stack,
   RadioGroup,
   Radio,
   Checkbox,
-  Button,
-  ColorModeProvider,
-  useColorModeValue,
 } from "@chakra-ui/react";
 
-export default function QRCodeForm() {
-  const [formData, setFormData] = useState({
-    data: "",
-    imageUri: "",
-    innerEye: "circle",
-    outerEye: "circle",
-    backgroundColor: "black",
-    size: 200,
-    outputFormat: "png",
-  });
+export default function QRCodeGeneratorForm() {
+  const [data, setData] = useState("");
+  const [imageUri, setImageUri] = useState("icon://appstore");
+  const [innerEye, setInnerEye] = useState("circle");
+  const [outerEye, setOuterEye] = useState("circle");
+  const [backgroundColor, setBackgroundColor] = useState("#000000");
+  const [size, setSize] = useState(200);
+  const [quietZone, setQuietZone] = useState(4);
+  const [errorCorrection, setErrorCorrection] = useState("M");
+  const [filename, setFilename] = useState("qrcode");
+  const [format, setFormat] = useState("png");
+  const [advancedSettings, setAdvancedSettings] = useState(false);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleCheckboxChange = (e) => {
-    const { name, checked } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: checked }));
-  };
-
-  const handleColorChange = (color) => {
-    setFormData((prevData) => ({ ...prevData, backgroundColor: color.hex }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form Data:", formData);
+  const handleGenerateQRCode = () => {
+    // Implement QR code generation logic here
+    // You can access the form input values from the state variables
   };
 
   return (
-    <ColorModeProvider>
-      <Box p={4}>
-        <form onSubmit={handleSubmit}>
-          <FormControl mb={4} isRequired>
-            <FormLabel>Data</FormLabel>
-            <Input
-              type="text"
-              name="data"
-              value={formData.data}
-              onChange={handleInputChange}
-              placeholder="Enter data"
-            />
-          </FormControl>
+    <ChakraProvider>
+      <Box p={4} maxW="md" rounded={"lg"} mx="auto" className="Form">
+        <FormControl mb={4} isRequired>
+          <FormLabel>Data</FormLabel>
+          <Input
+            placeholder="Enter data"
+            value={data}
+            onChange={(e) => setData(e.target.value)}
+          />
+        </FormControl>
 
-          <FormControl mb={4}>
-            <FormLabel>Image URI (Optional)</FormLabel>
-            <Input
-              type="text"
-              name="imageUri"
-              value={formData.imageUri}
-              onChange={handleInputChange}
-              placeholder="Enter image URI"
-            />
-          </FormControl>
+        <Checkbox
+          mb={4}
+          onChange={() => setAdvancedSettings(!advancedSettings)}
+        >
+          Show Advanced Settings
+        </Checkbox>
 
-          <FormControl mb={4}>
-            <FormLabel>Inner Eye</FormLabel>
-            <RadioGroup
-              name="innerEye"
-              value={formData.innerEye}
-              onChange={handleInputChange}
-            >
-              <Radio value="circle">Circle</Radio>
-              <Radio value="square">Square</Radio>
-            </RadioGroup>
-          </FormControl>
+        <Tabs isFitted variant="enclosed">
+          <TabList mb={4}>
+            <Tab>Basic Settings</Tab>
+            <Tab>Advanced Settings</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <FormControl mb={4}>
+                <FormLabel>Image URI (Optional)</FormLabel>
+                <Input
+                  placeholder="Enter image URI"
+                  value={imageUri}
+                  onChange={(e) => setImageUri(e.target.value)}
+                />
+              </FormControl>
 
-          <FormControl mb={4}>
-            <FormLabel>Outer Eye</FormLabel>
-            <RadioGroup
-              name="outerEye"
-              value={formData.outerEye}
-              onChange={handleInputChange}
-            >
-              <Radio value="circle">Circle</Radio>
-              <Radio value="square">Square</Radio>
-            </RadioGroup>
-          </FormControl>
+              <FormControl mb={4}>
+                <FormLabel>Size</FormLabel>
+                <Select
+                  value={size}
+                  onChange={(e) => setSize(Number(e.target.value))}
+                >
+                  {[200, 400, 800, 1000].map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                  <option value="custom">Custom</option>
+                </Select>
+                {size === "custom" && (
+                  <Input
+                    mt={2}
+                    placeholder="Enter custom size"
+                    type="number"
+                    value={size}
+                    onChange={(e) => setSize(Number(e.target.value))}
+                  />
+                )}
+              </FormControl>
+            </TabPanel>
+            <TabPanel>
+              <FormControl mb={4}>
+                <FormLabel>Inner Eye</FormLabel>
+                <RadioGroup
+                  value={innerEye}
+                  onChange={(value) => setInnerEye(value)}
+                >
+                  <Stack direction="row">
+                    <Radio value="circle">Circle</Radio>
+                    <Radio value="square">Square</Radio>
+                  </Stack>
+                </RadioGroup>
+              </FormControl>
 
-          <FormControl mb={4}>
-            <FormLabel>Background Color</FormLabel>
-            <Input
-              type="color"
-              name="backgroundColor"
-              value={formData.backgroundColor}
-              onChange={(e) => handleColorChange(e.target.value)}
-            />
-          </FormControl>
+              <FormControl mb={4}>
+                <FormLabel>Outer Eye</FormLabel>
+                <RadioGroup
+                  value={outerEye}
+                  onChange={(value) => setOuterEye(value)}
+                >
+                  <Stack direction="row">
+                    <Radio value="circle">Circle</Radio>
+                    <Radio value="square">Square</Radio>
+                  </Stack>
+                </RadioGroup>
+              </FormControl>
 
-          <FormControl mb={4}>
-            <FormLabel>Size</FormLabel>
-            <Select
-              name="size"
-              value={formData.size}
-              onChange={handleInputChange}
-            >
-              <option value={200}>200</option>
-              <option value={400}>400</option>
-              <option value={800}>800</option>
-              <option value={1000}>1000</option>
-              <option value="custom">Custom</option>
-            </Select>
-          </FormControl>
+              <FormControl mb={4}>
+                <FormLabel>Background Color</FormLabel>
+                <Input
+                  type="color"
+                  value={backgroundColor}
+                  onChange={(e) => setBackgroundColor(e.target.value)}
+                />
+              </FormControl>
 
-          {formData.size === "custom" && (
-            <FormControl mb={4}>
-              <FormLabel>Custom Size</FormLabel>
-              <Input
-                type="number"
-                name="size"
-                value={formData.size}
-                onChange={handleInputChange}
-                placeholder="Enter custom size"
-              />
-            </FormControl>
-          )}
+              <FormControl mb={4}>
+                <FormLabel>Error Correction</FormLabel>
+                <Select
+                  value={errorCorrection}
+                  onChange={(e) => setErrorCorrection(e.target.value)}
+                >
+                  <option value="L">Low</option>
+                  <option value="M">Medium</option>
+                  <option value="Q">Quartile</option>
+                  <option value="H">High</option>
+                </Select>
+              </FormControl>
 
-          <FormControl mb={4}>
-            <FormLabel>Output Format</FormLabel>
-            <Select
-              name="outputFormat"
-              value={formData.outputFormat}
-              onChange={handleInputChange}
-            >
-              <option value="png">PNG</option>
-              <option value="jpg">JPG</option>
-              <option value="svg">SVG</option>
-            </Select>
-          </FormControl>
+              <FormControl mb={4}>
+                <FormLabel>Filename</FormLabel>
+                <Input
+                  placeholder="Enter filename"
+                  value={filename}
+                  onChange={(e) => setFilename(e.target.value)}
+                />
+              </FormControl>
 
-          <FormControl mb={4}>
-            <Checkbox
-              name="modules"
-              isChecked={formData.modules}
-              onChange={handleCheckboxChange}
-            >
-              Include Modules
-            </Checkbox>
-          </FormControl>
+              <FormControl mb={4}>
+                <FormLabel>Format</FormLabel>
+                <Select
+                  value={format}
+                  onChange={(e) => setFormat(e.target.value)}
+                >
+                  <option value="svg">SVG</option>
+                  <option value="jpg">JPG</option>
+                  <option value="png">PNG</option>
+                </Select>
+              </FormControl>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
 
-          <Button type="submit" colorScheme="teal">
-            Generate QR Code
-          </Button>
-        </form>
+        <Button colorScheme="teal" onClick={handleGenerateQRCode}>
+          Generate QR Code
+        </Button>
       </Box>
-    </ColorModeProvider>
+    </ChakraProvider>
   );
 }
