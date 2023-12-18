@@ -106,8 +106,11 @@ export default function QRCodeForm({
                     size="sm"
                   >
                     <option value="png">PNG</option>
+                    <option value="gif">GIF</option>
+                    <option value="jpeg">JPEG</option>
                     <option value="jpg">JPG</option>
                     <option value="svg">SVG</option>
+                    <option value="eps">EPS</option>
                   </Select>
                 </FormControl>
 
@@ -132,28 +135,26 @@ export default function QRCodeForm({
                 </FormControl>
 
                 <FormControl>
-                  <FormLabel fontSize="sm">QZone</FormLabel>
-                  <Select
+                  <FormLabel fontSize="sm">QZone (1-100)</FormLabel>
+                  <Input
+                    type="number"
                     name="qzone"
                     value={formData.qzone}
-                    onChange={(e) =>
-                      handleAdvancedChange("qzone", e.target.value)
-                    }
+                    onChange={handleInputChange}
+                    min={1}
+                    max={100}
                     size="sm"
-                  >
-                    <option value="1">Enabled</option>
-                    <option value="0">Disabled</option>
-                  </Select>
+                  />
                 </FormControl>
 
                 <FormControl>
-                  <FormLabel fontSize="sm">Margin</FormLabel>
+                  <FormLabel fontSize="sm">Margin (1-50)</FormLabel>
                   <Slider
                     name="margin"
-                    min={0}
+                    min={1}
                     max={50}
                     step={1}
-                    defaultValue={0}
+                    defaultValue={1}
                     value={formData.margin}
                     onChange={handleSliderChange}
                   >
