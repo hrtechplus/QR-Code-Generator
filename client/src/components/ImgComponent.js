@@ -3,27 +3,23 @@ import { Box, Image, Text } from "@chakra-ui/react";
 import "./ImgComponent.css";
 
 export default function ImgComponent({ imageUrl, caption = "sample" }) {
-  console.log(imageUrl);
-
   return (
     <Box
       className="imgBox"
       p={[3, 6]}
-      rounded={"lg"}
+      rounded="lg"
       maxW={["50%", "100vw", "100vw"]}
       mx="auto"
     >
       <Box textAlign="center">
-        {imageUrl && (
-          <Image
-            src={imageUrl}
-            alt="QR Code Image"
-            boxSize="100%"
-            objectFit="cover"
-            borderRadius="md"
-            rounded="xl"
-          />
-        )}
+        <Image
+          src={imageUrl}
+          alt="Image"
+          boxSize="100%"
+          objectFit="cover"
+          borderRadius="md"
+          rounded="xl"
+        />
         {caption && (
           <Text mt={2} color="gray.600" fontSize={["sm", "md"]}>
             {caption}
