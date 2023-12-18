@@ -50,48 +50,14 @@ export default function QRCodeForm({
             <TabPanel>
               <VStack spacing={2}>
                 <FormControl>
-                  <FormLabel fontSize="sm">Image URI</FormLabel>
+                  <FormLabel fontSize="sm">Color</FormLabel>
                   <Input
-                    type="text"
-                    name="imageUri"
-                    value={formData.imageUri}
+                    type="color"
+                    name="color"
+                    value={formData.color}
                     onChange={handleInputChange}
                     size="sm"
-                    placeholder="Enter image URI"
                   />
-                </FormControl>
-              </VStack>
-            </TabPanel>
-            <TabPanel>
-              <VStack spacing={2}>
-                <FormControl>
-                  <FormLabel fontSize="sm">Inner Eye Style</FormLabel>
-                  <Select
-                    name="innerEye"
-                    value={formData.innerEye}
-                    onChange={(e) =>
-                      handleAdvancedChange("innerEye", e.target.value)
-                    }
-                    size="sm"
-                  >
-                    <option value="circle">Circle</option>
-                    <option value="square">Square</option>
-                  </Select>
-                </FormControl>
-
-                <FormControl>
-                  <FormLabel fontSize="sm">Outer Eye Style</FormLabel>
-                  <Select
-                    name="outerEye"
-                    value={formData.outerEye}
-                    onChange={(e) =>
-                      handleAdvancedChange("outerEye", e.target.value)
-                    }
-                    size="sm"
-                  >
-                    <option value="circle">Circle</option>
-                    <option value="square">Square</option>
-                  </Select>
                 </FormControl>
 
                 <FormControl>
@@ -104,7 +70,10 @@ export default function QRCodeForm({
                     size="sm"
                   />
                 </FormControl>
-
+              </VStack>
+            </TabPanel>
+            <TabPanel>
+              <VStack spacing={2}>
                 <FormControl>
                   <FormLabel fontSize="sm">Size</FormLabel>
                   <Slider
