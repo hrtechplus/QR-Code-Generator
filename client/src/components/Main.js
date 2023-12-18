@@ -17,7 +17,9 @@ export default function CenteredBox() {
     format: "png",
   });
 
-  const [qrCode, setQrCode] = useState(null);
+  const [qrCode, setQrCode] = useState(
+    "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example"
+  );
 
   const handleInputChange = (e) => {
     alert("hello");
