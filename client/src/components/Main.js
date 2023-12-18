@@ -18,7 +18,7 @@ export default function CenteredBox() {
   });
 
   const [qrCode, setQrCode] = useState(
-    "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example"
+    "https://api.qrserver.com/v1/create-qr-code/?size=450x450&data=Example&ecc=H&color=392467&bgcolor=FFD1E3&margin=19&qzone=1"
   );
 
   const handleInputChange = (e) => {
