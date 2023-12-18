@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import {
   Box,
   Button,
@@ -20,36 +21,14 @@ import {
 } from "@chakra-ui/react";
 import InputField from "./InputField";
 
-export default function QRCodeForm() {
-  const [formData, setFormData] = useState({
-    data: "",
-    imageUri: "icon://appstore",
-    innerEye: "circle",
-    outerEye: "circle",
-    backgroundColor: "black",
-    size: 200,
-    format: "png",
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSliderChange = (value) => {
-    setFormData({ ...formData, size: value });
-  };
-
-  const handleAdvancedChange = (name, value) => {
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // Add logic for handling form submission
-    console.log(formData);
-  };
-
+export default function QRCodeForm({
+  handleFormSubmit,
+  handleInputChange,
+  handleSliderChange,
+  handleAdvancedChange,
+  formData,
+  setQrCode,
+}) {
   return (
     <Box p={2} maxW="300px" mx="auto">
       <form onSubmit={handleFormSubmit}>
@@ -170,7 +149,58 @@ export default function QRCodeForm() {
           </TabPanels>
         </Tabs>
 
-        <Button type="submit" colorScheme="teal" size="sm" mt={2}>
+        <Button
+          onClick={async () => {
+            const options = {
+              method: "POST",
+              url: "https://qrcode3.p.rapidapi.com/qrcode/text",
+              headers: {
+                "content-type": "application/json",
+                "X-RapidAPI-Key":
+                  "555c31568cmshf00b9548b9b5b7dp1028ccjsn9d2c8be655ce",
+                "X-RapidAPI-Host": "qrcode3.p.rapidapi.com",
+              },
+              data: {
+                data: "https://linqr.app",
+                image: {
+                  uri: "https://w7.pngwing.com/pngs/991/568/png-transparent-facebook-logo-computer-icons-facebook-logo-facebook-thumbnail.png",
+                  modules: true,
+                },
+                style: {
+                  module: {
+                    color: "black",
+                    shape: "circle",
+                  },
+                  inner_eye: { shape: "circle" },
+                  outer_eye: { shape: "circle" },
+                  background: {},
+                },
+                size: {
+                  width: 800,
+                  quiet_zone: 8,
+                  error_correction: "M",
+                },
+                output: {
+                  filename: "qrcode",
+                  format: "png",
+                },
+              },
+            };
+
+            try {
+              const response = await axios.request(options);
+
+              setQrCode(response.data);
+
+              console.log(response.data);
+            } catch (error) {
+              console.error(error);
+            }
+          }}
+          colorScheme="teal"
+          size="sm"
+          mt={2}
+        >
           Generate QR Code
         </Button>
       </form>

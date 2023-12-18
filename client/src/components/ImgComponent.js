@@ -3,6 +3,8 @@ import { Box, Image, Text } from "@chakra-ui/react";
 import "./ImgComponent.css";
 
 export default function ImgComponent({ imageUrl, caption = "sample" }) {
+  console.log(imageUrl);
+
   return (
     <Box
       className="imgBox"
@@ -12,14 +14,16 @@ export default function ImgComponent({ imageUrl, caption = "sample" }) {
       mx="auto"
     >
       <Box textAlign="center">
-        <Image
-          src="https://www.qrcode-monkey.com/img/qr/templates/ninja.svg"
-          alt="Image"
-          boxSize="100%"
-          objectFit="cover"
-          borderRadius="md"
-          rounded="xl"
-        />
+        {imageUrl && (
+          <Image
+            src={imageUrl}
+            alt="QR Code Image"
+            boxSize="100%"
+            objectFit="cover"
+            borderRadius="md"
+            rounded="xl"
+          />
+        )}
         {caption && (
           <Text mt={2} color="gray.600" fontSize={["sm", "md"]}>
             {caption}

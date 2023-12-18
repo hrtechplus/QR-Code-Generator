@@ -1,11 +1,45 @@
-import React from "react";
-import { Flex, Center, Box, Square, Container, Link } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Flex, Center, Box, Container } from "@chakra-ui/react";
 import ImgComponent from "./ImgComponent";
 import Form from "./Form";
 import LinkBtn from "./LinkBtn";
 import "./Main.css";
-
 export default function CenteredBox() {
+  /////////////////
+
+  const [formData, setFormData] = useState({
+    data: "",
+    imageUri: "icon://appstore",
+    innerEye: "circle",
+    outerEye: "circle",
+    backgroundColor: "black",
+    size: 200,
+    format: "png",
+  });
+
+  const [qrCode, setQrCode] = useState(null);
+
+  const handleInputChange = (e) => {
+    alert("hello");
+    const { name, value } = e.target;
+    // e.target eken ganne  adala click una compoent eka
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSliderChange = (value) => {
+    setFormData({ ...formData, size: value });
+  };
+
+  const handleAdvancedChange = (name, value) => {
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // Add logic for handling form submission
+    console.log(formData);
+  };
+  ////////////////
   return (
     <Center minH="100vh" bg={"#e6e6e6"}>
       <Box
@@ -25,7 +59,7 @@ export default function CenteredBox() {
             mb={[4, 4, 0]} // Adjust margin-bottom for spacing on smaller screens
           >
             <Flex direction="column">
-              <ImgComponent />
+              <ImgComponent imageUrl={qrCode} />
               <Center mt={4}>
                 <Flex maxW={"300px"} justify={"center"}>
                   <LinkBtn />
@@ -38,7 +72,14 @@ export default function CenteredBox() {
           <Container
             size={["100%", "150px", "150px"]} // Adjust the size for different screen sizes
           >
-            <Form />
+            <Form
+              handleFormSubmit={handleFormSubmit}
+              handleInputChange={handleInputChange}
+              handleSliderChange={handleSliderChange}
+              handleAdvancedChange={handleAdvancedChange}
+              formData={formData}
+              setQrCode={setQrCode}
+            />
           </Container>
         </Flex>
       </Box>
