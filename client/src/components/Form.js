@@ -50,10 +50,10 @@ export default function QRCodeForm({
 
         <Tabs
           mt={4}
-          className="MainColor"
           variant="enclosed-colored"
           isLazy
           size="sm"
+          className="inputColor"
         >
           <TabList>
             <Tab className="inputTab" fontSize="sm">
@@ -63,7 +63,7 @@ export default function QRCodeForm({
               Advanced Settings
             </Tab>
           </TabList>
-          <TabPanels className="inputColor">
+          <TabPanels>
             <TabPanel>
               <VStack spacing={2}>
                 <FormControl>
