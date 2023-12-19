@@ -38,5 +38,16 @@
 
 .MainColor {
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
-  box-shadow: 5px 5px 10px #b8aeae, -5px -5px 10px #ffffff;
+  box-shadow: 5px 5px 10px #edecec, -5px -5px 10px #ffffff;
+}
+.inputTab {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #ffffff, #e1e1e1);
+  box-shadow: 5px 5px 10px #d7d7d7, -5px -5px 10px #ffffff;
+}
+.inputTab b {
+  border-radius: 1px;
+}
+.colorSelect {
+  background-color: red;
 }

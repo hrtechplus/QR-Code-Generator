@@ -35,7 +35,11 @@ export default function QRCodeForm({
     <Box p={2} maxW={["100%", "300px"]} mx="auto">
       <form onSubmit={handleFormSubmit}>
         <FormControl isRequired mb={2}>
-          <FormLabel fontSize="sm">Data</FormLabel>
+          <FormLabel fontSize="sm">
+            <Text as={"b"} color={"black.100"}>
+              Enter your message
+            </Text>
+          </FormLabel>
           <Input
             className="input"
             type="text"
@@ -56,10 +60,20 @@ export default function QRCodeForm({
           className="inputColor"
         >
           <TabList justifyContent={"space-around"} border={"none"}>
-            <Tab className="inputTab" fontSize="sm" border={"none"}>
+            <Tab
+              className="inputTab a"
+              fontSize="sm"
+              border={"none"}
+              rounded={"lg"}
+            >
               Basic Settings
             </Tab>
-            <Tab className="inputTab" fontSize="sm" border={"none"}>
+            <Tab
+              className="inputTab b"
+              fontSize="sm"
+              border={"none"}
+              rounded={"lg"}
+            >
               Advanced Settings
             </Tab>
           </TabList>
@@ -69,6 +83,7 @@ export default function QRCodeForm({
                 <FormControl>
                   <FormLabel fontSize="sm">Color</FormLabel>
                   <Input
+                    className="colorSelect"
                     type="color"
                     name="color"
                     value={formData.color}
@@ -203,7 +218,7 @@ export default function QRCodeForm({
           </TabPanels>
         </Tabs>
 
-        <Button colorScheme="teal" size="sm" mt={2} type="submit">
+        <Button colorScheme="teal" size="sm" mt={4} type="submit">
           Generate QR Code
         </Button>
       </form>
