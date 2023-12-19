@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Center, Box, Container, Text, Button } from "@chakra-ui/react";
+import { Center, Box, Container, Text, Button, Flex } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import "./Main.css";
+import SocialMedia from "./SocialMedia";
 
 export default function About() {
   const [formData, setFormData] = useState({
@@ -69,6 +70,17 @@ export default function About() {
           Your QR code will be displayed on the left. You can also find
           additional links below the QR code for more options.
         </Text>
+
+        <Flex
+          direction="column"
+          align="center"
+          justify="center"
+          mx="auto"
+          my={4}
+        >
+          <SocialMedia />
+        </Flex>
+
         <Link to="/">
           <Button
             leftIcon={<ArrowBackIcon />}

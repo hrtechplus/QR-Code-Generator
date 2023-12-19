@@ -18,7 +18,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/about" element={<Instrcution />} />
+            <Route path="/instructions" element={<Instrcution />} />
             <Route path="/about" element={<About />} />
           </Routes>
           {/* The rest of your app goes here */}
