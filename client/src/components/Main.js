@@ -75,7 +75,7 @@ export default function CenteredBox() {
                 imageUrl={generateQRCodeUrl()}
                 caption={formData.data}
               />
-              <Center mt={4}>
+              <Center mt={2}>
                 <Flex maxW="300px" justify="center">
                   <Link to="./instructions">
                     <LinkBtn img={InstrucIcon} />
