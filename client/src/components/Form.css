@@ -23,10 +23,9 @@
 .inputColor {
   border: none;
   padding: 1rem;
-  border-radius: 0 0 20px 20px;
-
-  background: linear-gradient(145deg, #ffffff, rgb(255, 255, 255));
-  box-shadow: 7px 7px 14px #b1b1b1, -7px -7px 14px #ffffff;
+  border-radius: 0rem 0rem 1rem 1rem;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 5px 5px 10px #c7c7c7, -5px -5px 10px #ffffff;
   transition: 0.3s;
 }
 
