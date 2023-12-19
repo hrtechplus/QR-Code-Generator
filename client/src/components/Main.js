@@ -8,8 +8,8 @@ import "./Main.css";
 export default function CenteredBox() {
   const [formData, setFormData] = useState({
     data: "www.hasindu.online",
-    color: "black",
-    backgroundColor: "black",
+    color: "f5f5f5",
+    backgroundColor: "711DB0",
     size: 200,
     format: "png",
     ecc: "H",
