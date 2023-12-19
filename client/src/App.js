@@ -1,6 +1,7 @@
 import "./App.css";
 import { Button, Stack } from "react-bootstrap";
 import Main from "./components/Main";
+import Instrcution from "./components/Instrcution";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 const theme = extendTheme({
@@ -16,7 +17,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/about" element={<Main />} />
+            <Route path="/about" element={<Instrcution />} />
             <Route path="/htu" element={<Main />} />
           </Routes>
           {/* The rest of your app goes here */}
