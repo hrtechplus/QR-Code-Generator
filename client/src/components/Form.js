@@ -53,9 +53,11 @@ export default function QRCodeForm({
             <Tab className="inputTab" fontSize="sm">
               Basic Settings
             </Tab>
-            <Tab fontSize="sm">Advanced Settings</Tab>
+            <Tab className="inputTab" fontSize="sm">
+              Advanced Settings
+            </Tab>
           </TabList>
-          <TabPanels className="input" rounded={"xl"}>
+          <TabPanels className="inputColor">
             <TabPanel>
               <VStack spacing={2}>
                 <FormControl>
