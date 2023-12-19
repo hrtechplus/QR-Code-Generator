@@ -55,7 +55,7 @@ export default function QRCodeForm({
           size="sm"
           className="inputColor"
         >
-          <TabList>
+          <TabList justifyContent={"space-around"} border={"none"}>
             <Tab className="inputTab" fontSize="sm" border={"none"}>
               Basic Settings
             </Tab>
@@ -115,45 +115,6 @@ export default function QRCodeForm({
                 </FormControl>
 
                 <FormControl>
-                  <FormLabel fontSize="sm">Format</FormLabel>
-                  <Select
-                    name="format"
-                    value={formData.format}
-                    onChange={(e) =>
-                      handleAdvancedChange("format", e.target.value)
-                    }
-                    size="sm"
-                  >
-                    <option value="png">PNG</option>
-                    <option value="gif">GIF</option>
-                    <option value="jpeg">JPEG</option>
-                    <option value="jpg">JPG</option>
-                    <option value="svg">SVG</option>
-                    <option value="eps">EPS</option>
-                  </Select>
-                </FormControl>
-
-                {/* Advanced Settings */}
-                <FormControl>
-                  <FormLabel fontSize="sm">
-                    ECC (Error Correction Level)
-                  </FormLabel>
-                  <Select
-                    name="ecc"
-                    value={formData.ecc}
-                    onChange={(e) =>
-                      handleAdvancedChange("ecc", e.target.value)
-                    }
-                    size="sm"
-                  >
-                    <option value="L">Low</option>
-                    <option value="M">Medium</option>
-                    <option value="Q">Quartile</option>
-                    <option value="H">High</option>
-                  </Select>
-                </FormControl>
-
-                <FormControl>
                   <FormLabel fontSize="sm">QZone (1-100)</FormLabel>
                   <Slider
                     name="qzone"
@@ -197,6 +158,45 @@ export default function QRCodeForm({
                   <Text fontSize="xs" textAlign="center">
                     {formData.margin}px
                   </Text>
+                </FormControl>
+
+                <FormControl>
+                  <FormLabel fontSize="sm">Format</FormLabel>
+                  <Select
+                    name="format"
+                    value={formData.format}
+                    onChange={(e) =>
+                      handleAdvancedChange("format", e.target.value)
+                    }
+                    size="sm"
+                  >
+                    <option value="png">PNG</option>
+                    <option value="gif">GIF</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="jpg">JPG</option>
+                    <option value="svg">SVG</option>
+                    <option value="eps">EPS</option>
+                  </Select>
+                </FormControl>
+
+                {/* Advanced Settings */}
+                <FormControl>
+                  <FormLabel fontSize="sm">
+                    ECC (Error Correction Level)
+                  </FormLabel>
+                  <Select
+                    name="ecc"
+                    value={formData.ecc}
+                    onChange={(e) =>
+                      handleAdvancedChange("ecc", e.target.value)
+                    }
+                    size="sm"
+                  >
+                    <option value="L">Low</option>
+                    <option value="M">Medium</option>
+                    <option value="Q">Quartile</option>
+                    <option value="H">High</option>
+                  </Select>
                 </FormControl>
               </VStack>
             </TabPanel>

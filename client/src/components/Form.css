@@ -23,7 +23,7 @@
 .inputColor {
   border: none;
   padding: 1rem;
-  border-radius: 0rem 0rem 1rem 1rem;
+  border-radius: 1rem 1rem 1rem 1rem;
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
   box-shadow: 5px 5px 10px #c7c7c7, -5px -5px 10px #ffffff;
   transition: 0.3s;
@@ -39,20 +39,4 @@
 .MainColor {
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
   box-shadow: 5px 5px 10px #b8aeae, -5px -5px 10px #ffffff;
-}
-
-.inputTab {
-  border: none;
-  border-radius: 5px 5px 0 0;
-  background: linear-gradient(145deg, #e1e1e1, #ffffff);
-  box-shadow: 20px 20px 60px #d5d5d5, -20px -20px 60px #ffffff;
-  transition: 0.3s;
-}
-
-.inputTab:focus,
-.input:active {
-  border: none;
-  transition: 0.3s;
-  border-radius: 5px 5px 0 0;
-  box-shadow: inset 20px 20px 60px #e7e4e4, inset -20px -20px 60px #ffffff;
 }

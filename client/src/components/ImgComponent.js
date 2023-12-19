@@ -8,8 +8,9 @@ export default function ImgComponent({ imageUrl, caption = "sample" }) {
       className="imgBox"
       p={[3, 6]}
       rounded="lg"
-      maxW={["50%", "100vw", "100vw"]}
+      maxW={["80vw", "100vw", "100vw"]}
       mx="auto"
+      my={2}
     >
       <Box textAlign="center">
         <Image

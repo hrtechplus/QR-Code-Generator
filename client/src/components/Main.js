@@ -54,7 +54,7 @@ export default function CenteredBox() {
   };
 
   return (
-    <Center minH="100vh" bg="#e6e6e6">
+    <Center minH="100vh" bg="#e6e6e6" maxW={["100%", "100%", "100%"]} px={6}>
       <Box
         className="MainContainer"
         p={[2, 4, 8]}
@@ -68,7 +68,7 @@ export default function CenteredBox() {
           gap={[4, 4, 8]}
         >
           <Center w={["100%", "100%", "40%"]} mb={[4, 4, 0]}>
-            <Flex direction="column">
+            <Flex direction="column" alignContent={"space-evenly"}>
               <ImgComponent
                 imageUrl={generateQRCodeUrl()}
                 caption={formData.data}
