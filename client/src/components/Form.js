@@ -73,6 +73,7 @@ export default function QRCodeForm({
               fontSize="sm"
               border={"none"}
               rounded={"lg"}
+              ml={2}
             >
               Advanced Settings
             </Tab>
