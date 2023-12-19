@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Center, Box, Container, Text, Button } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons"; // Import the ArrowBackIcon
 import "./Main.css";
+import { Link } from "react-router-dom";
 
 export default function Instrcution() {
   const [formData, setFormData] = useState({
@@ -66,14 +67,16 @@ export default function Instrcution() {
           Your QR code will be displayed on the left. You can also find
           additional links below the QR code for more options.
         </Text>
-        <Button
-          leftIcon={<ArrowBackIcon />}
-          colorScheme="purple"
-          size="sm"
-          mb={4}
-        >
-          Back
-        </Button>
+        <Link to="/">
+          <Button
+            leftIcon={<ArrowBackIcon />}
+            colorScheme="purple"
+            size="sm"
+            mb={4}
+          >
+            Back
+          </Button>
+        </Link>
       </Box>
     </Center>
   );
