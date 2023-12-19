@@ -48,7 +48,13 @@ export default function QRCodeForm({
           />
         </FormControl>
 
-        <Tabs variant="enclosed-colored" isLazy size="sm">
+        <Tabs
+          mt={4}
+          className="MainColor"
+          variant="enclosed-colored"
+          isLazy
+          size="sm"
+        >
           <TabList>
             <Tab className="inputTab" fontSize="sm">
               Basic Settings
