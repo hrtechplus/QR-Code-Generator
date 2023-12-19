@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Center, Box, Container, Text } from "@chakra-ui/react";
+import { Center, Box, Container, Text, Button } from "@chakra-ui/react";
+import { ArrowBackIcon } from "@chakra-ui/icons"; // Import the ArrowBackIcon
 import "./Main.css";
 
 export default function Instrcution() {
@@ -65,6 +66,14 @@ export default function Instrcution() {
           Your QR code will be displayed on the left. You can also find
           additional links below the QR code for more options.
         </Text>
+        <Button
+          leftIcon={<ArrowBackIcon />}
+          colorScheme="purple"
+          size="sm"
+          mb={4}
+        >
+          Back
+        </Button>
       </Box>
     </Center>
   );

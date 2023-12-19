@@ -4,12 +4,13 @@ import ImgComponent from "./ImgComponent";
 import Form from "./Form";
 import LinkBtn from "./LinkBtn";
 import "./Main.css";
+import { Link } from "react-router-dom";
 
 export default function CenteredBox() {
   const [formData, setFormData] = useState({
     data: "www.hasindu.online",
-    color: "f5f5f5",
-    backgroundColor: "711DB0",
+    color: "black",
+    backgroundColor: "f5f5f5",
     size: 200,
     format: "png",
     ecc: "H",
@@ -75,7 +76,10 @@ export default function CenteredBox() {
               />
               <Center mt={4}>
                 <Flex maxW="300px" justify="center">
-                  <LinkBtn />
+                  <Link to="./about">
+                    <LinkBtn />
+                  </Link>
+
                   <LinkBtn />
                   <LinkBtn />
                 </Flex>
