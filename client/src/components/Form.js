@@ -69,7 +69,7 @@ export default function QRCodeForm({
                   <Input
                     type="color"
                     name="bgcolor"
-                    value={formData.backgroundColor}
+                    value={formData.bgcolor}
                     onChange={handleInputChange}
                     size="sm"
                   />
