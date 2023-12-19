@@ -19,6 +19,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
+import "./Form.css";
 export default function QRCodeForm({
   handleFormSubmit,
   handleInputChange,
@@ -36,8 +37,10 @@ export default function QRCodeForm({
         <FormControl isRequired mb={2}>
           <FormLabel fontSize="sm">Data</FormLabel>
           <Input
+            className="input"
             type="text"
             name="data"
+            rounded={"lg"}
             value={formData.data}
             onChange={handleInputChange}
             size="sm"
@@ -47,10 +50,12 @@ export default function QRCodeForm({
 
         <Tabs variant="enclosed-colored" isLazy size="sm">
           <TabList>
-            <Tab fontSize="sm">Basic Settings</Tab>
+            <Tab className="inputTab" fontSize="sm">
+              Basic Settings
+            </Tab>
             <Tab fontSize="sm">Advanced Settings</Tab>
           </TabList>
-          <TabPanels>
+          <TabPanels className="input" rounded={"xl"}>
             <TabPanel>
               <VStack spacing={2}>
                 <FormControl>

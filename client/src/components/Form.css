@@ -5,16 +5,29 @@
 }
 .input {
   border: none;
-  outline: none;
-  border-radius: 15px;
-  padding: 1em;
-  background-color: #ccc;
-  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
-  transition: 300ms ease-in-out;
+  padding: 1rem;
+  border-radius: 5rem;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 5px 5px 10px #c7c7c7, -5px -5px 10px #ffffff;
+  transition: 0.3s;
 }
 
 .input:focus {
-  background-color: white;
-  transform: scale(1.05);
-  box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
+  outline-color: #e8e8e8;
+  background: #e8e8e8;
+  box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+  transition: 0.3s;
+}
+
+.inputTab {
+  border-radius: 5px 5px 0 0;
+
+  background: linear-gradient(145deg, #e1e1e1, #ffffff);
+  box-shadow: 20px 20px 60px #d5d5d5, -20px -20px 60px #ffffff;
+}
+
+.inputTab:focus {
+  border-radius: 5px 5px 0 0;
+  background: #fafafa;
+  box-shadow: inset 20px 20px 60px #c7c7c7, inset -20px -20px 60px #ffffff;
 }

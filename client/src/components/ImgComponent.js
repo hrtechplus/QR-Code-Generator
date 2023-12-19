@@ -21,8 +21,8 @@ export default function ImgComponent({ imageUrl, caption = "sample" }) {
           rounded="xl"
         />
         {caption && (
-          <Text mt={2} color="gray.600" fontSize={["sm", "md"]}>
-            {caption}
+          <Text mt={2} color="gray.600" fontSize={["xs", "xs"]}>
+            Developed By Hasindu Rangika
           </Text>
         )}
       </Box>

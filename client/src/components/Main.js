@@ -69,7 +69,10 @@ export default function CenteredBox() {
         >
           <Center w={["100%", "100%", "40%"]} mb={[4, 4, 0]}>
             <Flex direction="column">
-              <ImgComponent imageUrl={generateQRCodeUrl()} />
+              <ImgComponent
+                imageUrl={generateQRCodeUrl()}
+                caption={formData.data}
+              />
               <Center mt={4}>
                 <Flex maxW="300px" justify="center">
                   <LinkBtn />
