@@ -27,7 +27,9 @@ export default function CenteredBox() {
     const { name, value } = e.target;
     // Remove '#' from color values
     const sanitizedValue =
-      name === "color" || name === "bgcolor" ? value.replace("#", "") : value;
+      name === "color" || name === "backgroundColor"
+        ? value.replace("#", "")
+        : value;
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: sanitizedValue,
