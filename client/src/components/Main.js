@@ -25,14 +25,23 @@ export default function CenteredBox() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    // Remove '#' from color values
+    const sanitizedValue =
+      name === "color" || name === "bgcolor" ? value.replace("#", "") : value;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: sanitizedValue,
+    }));
+
+    console.log(formData);
   };
 
-  const handleSliderChange = (value) => {
-    setFormData({ ...formData, size: value });
-  };
+  // const handleSliderChange = (e: { target: { name: any, value: any } }) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     // Add logic for handling form submission
     console.log(formData);
@@ -72,7 +81,6 @@ export default function CenteredBox() {
             <Form
               handleFormSubmit={handleFormSubmit}
               handleInputChange={handleInputChange}
-              handleSliderChange={handleSliderChange}
               handleAdvancedChange={handleAdvancedChange}
               formData={formData}
             />

@@ -22,10 +22,14 @@ import {
 export default function QRCodeForm({
   handleFormSubmit,
   handleInputChange,
-  handleSliderChange,
   handleAdvancedChange,
   formData,
 }) {
+  // Separate function to handle slider changes
+  const handleSliderChange = (name, value) => {
+    handleInputChange({ target: { name, value } });
+  };
+
   return (
     <Box p={2} maxW={["100%", "300px"]} mx="auto">
       <form onSubmit={handleFormSubmit}>
@@ -83,7 +87,9 @@ export default function QRCodeForm({
                     step={200}
                     defaultValue={200}
                     value={formData.size}
-                    onChange={handleSliderChange}
+                    onChange={(value) =>
+                      handleSliderChange("size", parseInt(value))
+                    }
                   >
                     <SliderTrack>
                       <SliderFilledTrack />
@@ -136,15 +142,25 @@ export default function QRCodeForm({
 
                 <FormControl>
                   <FormLabel fontSize="sm">QZone (1-100)</FormLabel>
-                  <Input
-                    type="number"
+                  <Slider
                     name="qzone"
-                    value={formData.qzone}
-                    onChange={handleInputChange}
                     min={1}
                     max={100}
-                    size="sm"
-                  />
+                    step={1}
+                    defaultValue={1}
+                    value={formData.qzone}
+                    onChange={(value) =>
+                      handleSliderChange("qzone", parseInt(value))
+                    }
+                  >
+                    <SliderTrack>
+                      <SliderFilledTrack />
+                    </SliderTrack>
+                    <SliderThumb boxSize={4} />
+                  </Slider>
+                  <Text fontSize="xs" textAlign="center">
+                    {formData.qzone}
+                  </Text>
                 </FormControl>
 
                 <FormControl>
@@ -156,7 +172,9 @@ export default function QRCodeForm({
                     step={1}
                     defaultValue={1}
                     value={formData.margin}
-                    onChange={handleSliderChange}
+                    onChange={(value) =>
+                      handleSliderChange("margin", parseInt(value))
+                    }
                   >
                     <SliderTrack>
                       <SliderFilledTrack />
