@@ -56,10 +56,10 @@ export default function QRCodeForm({
           className="inputColor"
         >
           <TabList>
-            <Tab className="inputTab" fontSize="sm">
+            <Tab className="inputTab" fontSize="sm" border={"none"}>
               Basic Settings
             </Tab>
-            <Tab className="inputTab" fontSize="sm">
+            <Tab className="inputTab" fontSize="sm" border={"none"}>
               Advanced Settings
             </Tab>
           </TabList>

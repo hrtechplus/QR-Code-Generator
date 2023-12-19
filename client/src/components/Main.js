@@ -63,7 +63,7 @@ export default function CenteredBox() {
       >
         <Flex
           direction={["column", "column", "row"]}
-          align={["center", "center", "flex-start"]}
+          align={["center", "center", "center"]}
           justify={["center", "center", "space-between"]}
           gap={[4, 4, 8]}
         >
