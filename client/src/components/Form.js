@@ -1,8 +1,7 @@
 import React from "react";
-import toast, { Toaster } from "react-hot-toast";
-import { Fade, Hinge } from "react-awesome-reveal";
+import toast from "react-hot-toast";
 import { Tooltip } from "@chakra-ui/react";
-import { saveAs } from "file-saver/FileSaver";
+
 import {
   Box,
   Button,
