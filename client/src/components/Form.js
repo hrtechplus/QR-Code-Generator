@@ -1,4 +1,5 @@
 import React from "react";
+import toast, { Toaster } from "react-hot-toast";
 import {
   Box,
   Button,
@@ -42,6 +43,7 @@ export default function QRCodeForm({
       mx="auto"
       className="MainFormBox"
       px={4}
+      mb={4}
     >
       <form onSubmit={handleFormSubmit}>
         <FormControl isRequired mb={2}>
@@ -229,8 +231,14 @@ export default function QRCodeForm({
           </TabPanels>
         </Tabs>
 
-        <Button colorScheme="teal" size="sm" mt={4} type="submit">
-          Generate QR Code
+        <Button
+          className="submitBtn"
+          size="sm"
+          mt={4}
+          type="submit"
+          onClick={() => toast("Click on the QR Code😉.")}
+        >
+          Download QR Code
         </Button>
       </form>
     </Box>

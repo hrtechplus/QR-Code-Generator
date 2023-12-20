@@ -3,7 +3,7 @@ import { Center, Box, Container, Text, Button } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons"; // Import the ArrowBackIcon
 import "./Main.css";
 import { Link } from "react-router-dom";
-
+import "../components/Form.css";
 export default function Instrcution() {
   const [formData, setFormData] = useState({
     data: "www.hasindu.online",
@@ -69,8 +69,8 @@ export default function Instrcution() {
         </Text>
         <Link to="/">
           <Button
+            className="submitBtn"
             leftIcon={<ArrowBackIcon />}
-            colorScheme="purple"
             size="sm"
             mb={4}
           >
