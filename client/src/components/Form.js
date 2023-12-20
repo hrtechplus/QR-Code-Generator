@@ -1,5 +1,6 @@
 import React from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { Fade, Hinge } from "react-awesome-reveal";
 import {
   Box,
   Button,
@@ -52,6 +53,7 @@ export default function QRCodeForm({
               Enter your message
             </Text>
           </FormLabel>
+
           <Input
             className="input"
             type="text"
@@ -238,7 +240,7 @@ export default function QRCodeForm({
           type="submit"
           onClick={() => toast("Click on the QR Code😉.")}
         >
-          Download QR Code
+          Generate QR Code
         </Button>
       </form>
     </Box>

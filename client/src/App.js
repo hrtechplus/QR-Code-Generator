@@ -6,10 +6,7 @@ import Instrcution from "./components/Instrcution";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
-AOS.init();
+import { Fade } from "react-awesome-reveal";
 const theme = extendTheme({
   fonts: {
     body: "Poppins, sans-serif",
@@ -22,9 +19,30 @@ function App() {
       <ChakraProvider theme={theme}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/instructions" element={<Instrcution />} />
-            <Route path="/about" element={<About />} />
+            <Route
+              path="/"
+              element={
+                <Fade cascade damping={0.1}>
+                  <Main />
+                </Fade>
+              }
+            />
+            <Route
+              path="/instructions"
+              element={
+                <Fade cascade damping={0.1}>
+                  <Instrcution />
+                </Fade>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <Fade cascade damping={0.1}>
+                  <About />
+                </Fade>
+              }
+            />
           </Routes>
           <Toaster />
           {/* The rest of your app goes here */}

@@ -18,8 +18,8 @@ export default function Instrcution() {
         </Text>
         <Text fontSize="sm" mb={4}>
           Fill in the details below to customize your QR code. Once you're
-          ready, click on the "Download QR Code" button or Simply click on your
-          QR Code Image
+          ready, click on the "Generate QR Code" button to make sure you have
+          Generated the right image or Simply click on your QR Code Image
         </Text>
         <Container size={["100%", "150px", "150px"]}>
           {/* Include your form component here */}

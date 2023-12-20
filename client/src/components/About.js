@@ -3,7 +3,7 @@ import { Center, Box, Container, Text, Button, Flex } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import "./Main.css";
-import SocialMedia from "./SocialMedia";
+
 import "../components/Form.css";
 export default function About() {
   return (
@@ -37,9 +37,7 @@ export default function About() {
           justify="center"
           mx="auto"
           my={4}
-        >
-          <SocialMedia />
-        </Flex>
+        ></Flex>
 
         <Link to="/">
           <Button
