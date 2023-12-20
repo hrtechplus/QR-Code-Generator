@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./Main.css";
 
 import "../components/Form.css";
+import SocialMedia from "./SocialMedia/SocialMedia";
 export default function About() {
   return (
     <Center minH="100vh" bg="#e6e6e6" maxW={["100%", "100%", "100%"]} px={6}>
@@ -37,7 +38,9 @@ export default function About() {
           justify="center"
           mx="auto"
           my={4}
-        ></Flex>
+        >
+          <SocialMedia />
+        </Flex>
 
         <Link to="/">
           <Button
