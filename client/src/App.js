@@ -5,7 +5,7 @@ import About from "./components/About";
 import Instrcution from "./components/Instrcution";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { Fade } from "react-awesome-reveal";
 const theme = extendTheme({
   fonts: {
