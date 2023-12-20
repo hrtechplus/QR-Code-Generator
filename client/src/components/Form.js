@@ -114,7 +114,7 @@ export default function QRCodeForm({
                     className="colorSelect"
                     type="color"
                     name="color"
-                    value={formData.color}
+                    value={`#${formData.color}`}
                     onChange={handleInputChange}
                     size="sm"
                   />
@@ -135,7 +135,7 @@ export default function QRCodeForm({
                   <Input
                     type="color"
                     name="backgroundColor"
-                    value={formData.backgroundColor}
+                    value={`#${formData.backgroundColor}`}
                     onChange={handleInputChange}
                     size="sm"
                   />

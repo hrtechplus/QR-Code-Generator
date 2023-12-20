@@ -29,6 +29,7 @@ export default function CenteredBox() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
     // Remove '#' from color values
     const sanitizedValue =
       name === "color" || name === "backgroundColor"
@@ -42,12 +43,7 @@ export default function CenteredBox() {
     console.log(formData);
   };
 
-  // const handleSliderChange = (e: { target: { name: any, value: any } }) => {
-  //   const { name, value } = e.target;
-  //   setFormData({ ...formData, [name]: value });
-  // };
-
-  const handleFormSubmit = (e: { preventDefault: () => void }) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     // Add logic for handling form submission
     console.log(formData);

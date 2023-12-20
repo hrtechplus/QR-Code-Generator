@@ -1,6 +1,6 @@
 {
-  "name": "QR-Code-Generator-By Hasindu",
-  "displayName":"QR Generator",
+  "name": "QRCodeGeneratorByHasindu",
+  "displayName": "QR Generator",
   "homepage": "https://qrcode.hasindu.online/",
   "version": "0.1.0",
   "private": true,
