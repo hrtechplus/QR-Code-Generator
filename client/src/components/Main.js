@@ -58,7 +58,7 @@ export default function CenteredBox() {
   };
 
   return (
-    <Center minH="100vh" bg="#e6e6e6" maxW={["100%", "100%", "100%"]} px={6}>
+    <Center minH="100vh" bg="#e6e6e6" maxW="100%" px={[2, 4, 6, 8]}>
       <Box
         className="MainContainer"
         p={[2, 4, 8]}
@@ -71,7 +71,7 @@ export default function CenteredBox() {
           justify={["center", "center", "space-between"]}
           gap={[4, 4, 8]}
         >
-          <Center minW={"215px"} w={["100%", "100%", "40%"]} mb={[4, 4, 0]}>
+          <Center minW={"215px"} w={["100%", "100%", "40%"]} mb={[0, 0, 0]}>
             <Flex direction="column" alignContent={"space-evenly"}>
               <ImgComponent
                 imageUrl={generateQRCodeUrl()}
@@ -90,7 +90,7 @@ export default function CenteredBox() {
               </Center>
             </Flex>
           </Center>
-          <Container size={["100%", "150px", "150px"]}>
+          <Container size={["100%", "100%", "100%", "150px", "150px"]}>
             <Form
               handleFormSubmit={handleFormSubmit}
               handleInputChange={handleInputChange}
