@@ -6,6 +6,10 @@ import Instrcution from "./components/Instrcution";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 const theme = extendTheme({
   fonts: {
     body: "Poppins, sans-serif",

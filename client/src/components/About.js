@@ -44,9 +44,11 @@ export default function About() {
         <Link to="/">
           <Button
             className="submitBtn"
+            bg={"#191919"}
+            colorScheme="white"
+            color={"#f5f5f5"}
             leftIcon={<ArrowBackIcon />}
             size="sm"
-            shadow="lg"
             mb={4}
           >
             Back
