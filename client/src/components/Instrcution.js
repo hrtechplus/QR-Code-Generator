@@ -14,7 +14,7 @@ export default function Instrcution() {
         w="100%"
       >
         <Text fontSize="xl" fontWeight="bold" mb={4}>
-          Generate QR Code Instructions
+          Instructions
         </Text>
         <Text fontSize="sm" mb={4}>
           Fill in the details below to customize your QR code. Once you're
@@ -27,6 +27,9 @@ export default function Instrcution() {
         <Text fontSize="sm" mt={4} px={4}>
           Your QR code will be displayed on the left. You can also find
           additional links below the QR code for more options.
+        </Text>
+        <Text fontSize="sm" mt={4} px={4}>
+          <Text as="kbd">qzone</Text>
         </Text>
         <Link to="/">
           <Button

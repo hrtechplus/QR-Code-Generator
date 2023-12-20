@@ -16,20 +16,19 @@ export default function About() {
         w="100%"
       >
         <Text fontSize="xl" fontWeight="bold" mb={4}>
-          About Me - Hasindu
+          About Me
         </Text>
         <Text fontSize="sm" mb={4}>
           Hi there! I'm Hasindu, and I'm passionate about system development and
-          experimentation with new technology. In this section, you can
-          customize your QR code. Once you're ready, click on the "Generate QR
-          Code" button.
+          experimentation with new technology. and another cool thing is I like
+          make a positive impact on people's lives.
         </Text>
         <Container size={["100%", "150px", "150px"]}>
           {/* Include your form component here */}
         </Container>
-        <Text fontSize="sm" mt={4}>
-          Your QR code will be displayed on the left. You can also find
-          additional links below the QR code for more options.
+
+        <Text fontSize="sm" mt={4} color={"Gray 900"}>
+          Cmon. Let's get connected!😉
         </Text>
 
         <Flex
