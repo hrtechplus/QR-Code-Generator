@@ -23,6 +23,7 @@ export default function CenteredBox() {
   const generateQRCodeUrl = () => {
     const { color, size, data, ecc, backgroundColor, margin, qzone, format } =
       formData;
+
     return `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${data}&ecc=${ecc}&color=${color}&bgcolor=${backgroundColor}&margin=${margin}&qzone=${qzone}&format=${format}`;
   };
 

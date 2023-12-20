@@ -2,6 +2,7 @@ import React from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Fade, Hinge } from "react-awesome-reveal";
 import { Tooltip } from "@chakra-ui/react";
+import { saveAs } from "file-saver/FileSaver";
 import {
   Box,
   Button,
@@ -309,7 +310,20 @@ export default function QRCodeForm({
           size="sm"
           my={4}
           type="submit"
-          onClick={() => toast("Click on the QR Code😉.")}
+          onClick={() => {
+            toast("Click on the QR Code😉.");
+            const {
+              color,
+              size,
+              data,
+              ecc,
+              backgroundColor,
+              margin,
+              qzone,
+              format,
+            } = formData;
+            console.log(size);
+          }}
         >
           Generate QR Code
         </Button>
