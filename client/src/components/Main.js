@@ -71,7 +71,7 @@ export default function CenteredBox() {
           justify={["center", "center", "space-between"]}
           gap={[4, 4, 8]}
         >
-          <Center w={["100%", "100%", "40%"]} mb={[4, 4, 0]}>
+          <Center minW={"215px"} w={["100%", "100%", "40%"]} mb={[4, 4, 0]}>
             <Flex direction="column" alignContent={"space-evenly"}>
               <ImgComponent
                 imageUrl={generateQRCodeUrl()}
