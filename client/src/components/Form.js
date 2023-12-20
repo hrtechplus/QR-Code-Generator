@@ -234,7 +234,7 @@ export default function QRCodeForm({
         <Button
           className="submitBtn"
           size="sm"
-          mt={4}
+          my={4}
           type="submit"
           onClick={() => toast("Click on the QR Code😉.")}
         >
