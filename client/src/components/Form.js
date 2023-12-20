@@ -24,7 +24,7 @@ import {
 } from "@chakra-ui/react";
 
 import "./Form.css";
-import { InfoIcon, InfoOutlineIcon } from "@chakra-ui/icons";
+import { InfoOutlineIcon } from "@chakra-ui/icons";
 export default function QRCodeForm({
   handleFormSubmit,
   handleInputChange,
