@@ -1,13 +1,13 @@
 import React from "react";
 import "./LinkBtn.css";
 import { InstrucIcon } from "./img/InstrucIcon";
+
 export default function LinkBtn({ img }) {
   return (
-    <div class="toggle" onclick="toggleButton()">
+    <div className="toggle" onClick={() => toggleButton()}>
       <input type="checkbox" />
-      <div class="button"></div>
-      <div class="label">
-        {" "}
+      <div className="button"></div>
+      <div className="label">
         <svg
           height="30px"
           width="30px"
