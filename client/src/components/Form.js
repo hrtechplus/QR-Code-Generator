@@ -25,14 +25,24 @@ export default function QRCodeForm({
   handleInputChange,
   handleAdvancedChange,
   formData,
+  qrURL,
 }) {
   // Separate function to handle slider changes
   const handleSliderChange = (name, value) => {
     handleInputChange({ target: { name, value } });
   };
 
+  //////////////////////////
+  //////////////////////////
+
   return (
-    <Box p={2} maxW={["100%", "300px"]} mx="auto">
+    <Box
+      p={2}
+      maxW={["100%", "300px"]}
+      mx="auto"
+      className="MainFormBox"
+      px={4}
+    >
       <form onSubmit={handleFormSubmit}>
         <FormControl isRequired mb={2}>
           <FormLabel fontSize="sm">

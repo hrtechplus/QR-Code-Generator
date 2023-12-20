@@ -13,7 +13,7 @@ export default function CenteredBox() {
     data: "www.hasindu.online",
     color: "black",
     backgroundColor: "f5f5f5",
-    size: 200,
+    size: 800,
     format: "png",
     ecc: "H",
     qzone: "1",
@@ -85,7 +85,6 @@ export default function CenteredBox() {
                   <Link to="./about">
                     <LinkBtn img={<UserIcon />} />
                   </Link>
-                  <LinkBtn />
                 </Flex>
               </Center>
             </Flex>
@@ -96,6 +95,7 @@ export default function CenteredBox() {
               handleInputChange={handleInputChange}
               handleAdvancedChange={handleAdvancedChange}
               formData={formData}
+              qrURL={generateQRCodeUrl}
             />
           </Container>
         </Flex>
