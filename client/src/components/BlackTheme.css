@@ -1,0 +1,5 @@
+.MainContainer {
+  border-radius: 47px;
+  background: linear-gradient(145deg, #151515, #121212);
+  box-shadow: 5px 5px 8px #0e0e0e, -5px -5px 8px #1a1a1a;
+}

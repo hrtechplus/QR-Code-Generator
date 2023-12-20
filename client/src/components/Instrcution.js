@@ -5,46 +5,6 @@ import "./Main.css";
 import { Link } from "react-router-dom";
 import "../components/Form.css";
 export default function Instrcution() {
-  const [formData, setFormData] = useState({
-    data: "www.hasindu.online",
-    color: "f5f5f5",
-    backgroundColor: "711DB0",
-    size: 200,
-    format: "png",
-    ecc: "H",
-    qzone: "1",
-    margin: 19,
-  });
-
-  const generateQRCodeUrl = () => {
-    const { color, size, data, ecc, backgroundColor, margin, qzone, format } =
-      formData;
-    return `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${data}&ecc=${ecc}&color=${color}&bgcolor=${backgroundColor}&margin=${margin}&qzone=${qzone}&format=${format}`;
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    // Remove '#' from color values
-    const sanitizedValue =
-      name === "color" || name === "backgroundColor"
-        ? value.replace("#", "")
-        : value;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: sanitizedValue,
-    }));
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // Add logic for handling form submission
-    console.log(formData);
-  };
-
-  const handleAdvancedChange = (name, value) => {
-    setFormData({ ...formData, [name]: value });
-  };
-
   return (
     <Center minH="100vh" bg="#e6e6e6" maxW={["100%", "100%", "100%"]} px={6}>
       <Box
@@ -70,6 +30,9 @@ export default function Instrcution() {
         <Link to="/">
           <Button
             className="submitBtn"
+            bg={"#191919"}
+            colorScheme="white"
+            color={"#f5f5f5"}
             leftIcon={<ArrowBackIcon />}
             size="sm"
             mb={4}
