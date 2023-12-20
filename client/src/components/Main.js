@@ -11,7 +11,7 @@ import { UserIcon } from "./img/UserIcon";
 export default function CenteredBox() {
   const [formData, setFormData] = useState({
     data: "www.hasindu.online",
-    color: "black",
+    color: "7E30E1",
     backgroundColor: "f5f5f5",
     size: 800,
     format: "png",
