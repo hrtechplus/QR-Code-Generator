@@ -6,6 +6,7 @@ import LinkBtn from "./LinkBtn";
 import "./Main.css";
 import { Link } from "react-router-dom";
 import { InstrucIcon } from "./img/InstrucIcon";
+import { UserIcon } from "./img/UserIcon";
 
 export default function CenteredBox() {
   const [formData, setFormData] = useState({
@@ -78,11 +79,11 @@ export default function CenteredBox() {
               <Center mt={2}>
                 <Flex maxW="300px" justify="center">
                   <Link to="./instructions">
-                    <LinkBtn img={InstrucIcon} />
+                    <LinkBtn img={<InstrucIcon />} />
                   </Link>
 
                   <Link to="./about">
-                    <LinkBtn />
+                    <LinkBtn img={<UserIcon />} />
                   </Link>
                   <LinkBtn />
                 </Flex>

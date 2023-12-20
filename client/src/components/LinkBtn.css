@@ -1,12 +1,13 @@
+/* LinkBtn.css */
+
 .toggle {
   display: inline-block;
   position: relative;
   height: 50px;
   width: 50px;
-  cursor: pointer; /* Add cursor pointer */
+  cursor: pointer;
 }
 
-/* Remove ":checked" from the styles */
 .toggle .button {
   transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: 0 7.5px 12.5px -2px rgba(0, 0, 0, 0.4),
@@ -15,7 +16,7 @@
     inset 0 1.5px 2px -0.5px rgba(255, 255, 255, 0.2),
     inset 0 0 2.5px 0.5px rgba(255, 255, 255, 0.8),
     inset 0 10px 15px 0 rgba(255, 255, 255, 0.2);
-  border-radius: 34.4px;
+  border-radius: 12px;
   position: absolute;
   background: #eaeaea;
   margin-left: -17.2px;
@@ -27,7 +28,6 @@
   top: 50%;
 }
 
-/* Add a new class to style the button when active */
 .toggle.active .button {
   filter: blur(0.5px);
   box-shadow: 0 5px 12.5px -2px rgba(0, 0, 0, 0.4),
@@ -64,7 +64,6 @@
 
 .toggle input:active ~ .button,
 .toggle.active .button {
-  /* Apply the same styles for active state */
   filter: blur(0.5px);
   box-shadow: 0 6px 12.5px -2px rgba(0, 0, 0, 0.4),
     inset 0 -4px 15px 0.5px rgba(255, 255, 255, 0.9),
@@ -80,4 +79,17 @@
 
 .toggle.active .label {
   color: rgba(0, 0, 0, 0.8);
+}
+
+.toggle .label svg {
+  /* Center the SVG in the middle of the button */
+  display: block;
+  margin: auto;
+  /* Set the icon color to black */
+  width: 50%; /* Set the desired width for the SVG */
+  height: 50%; /* Set the desired height for the SVG */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
