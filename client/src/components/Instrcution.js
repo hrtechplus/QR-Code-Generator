@@ -13,7 +13,7 @@ export default function Instrcution() {
         maxW={["100%", "400px", "600px"]}
         w="100%"
       >
-        <Text fontSize="xl" fontWeight="bold" mb={4}>
+        <Text fontSize="3xl" fontWeight="bold" mb={4}>
           Instructions
         </Text>
         <Text fontSize="sm" mb={4}>
@@ -29,7 +29,7 @@ export default function Instrcution() {
           additional links below the QR code for more options.
         </Text>
         <Text fontSize="sm" mt={4} px={4}>
-          <Text as="kbd">qzone</Text>
+          <Text as="kbd">hasindu.online</Text>
         </Text>
         <Link to="/">
           <Button

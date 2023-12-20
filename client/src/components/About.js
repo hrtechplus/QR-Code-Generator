@@ -15,7 +15,7 @@ export default function About() {
         maxW={["100%", "400px", "600px"]}
         w="100%"
       >
-        <Text fontSize="xl" fontWeight="bold" mb={4}>
+        <Text fontSize="3xl" fontWeight="bold" mb={4}>
           About Me
         </Text>
         <Text fontSize="sm" mb={4}>

@@ -145,7 +145,7 @@ export default function QRCodeForm({
             <TabPanel>
               <VStack spacing={2}>
                 <FormControl>
-                  <FormLabel fontSize="md" color={"#4A5568"} as={"b"}>
+                  <FormLabel fontSize="sm" color={"#4A5568"} as={"b"}>
                     Size{" "}
                     <Tooltip
                       hasArrow
@@ -178,7 +178,7 @@ export default function QRCodeForm({
                 </FormControl>
 
                 <FormControl>
-                  <FormLabel fontSize="md" color={"#4A5568"} as={"b"}>
+                  <FormLabel fontSize="sm" color={"#4A5568"} as={"b"}>
                     QZone{" "}
                     <Tooltip
                       hasArrow
@@ -211,7 +211,7 @@ export default function QRCodeForm({
                 </FormControl>
 
                 <FormControl>
-                  <FormLabel fontSize="md" color={"#4A5568"} as={"b"}>
+                  <FormLabel fontSize="sm" color={"#4A5568"} as={"b"}>
                     Margin{" "}
                     <Tooltip
                       hasArrow
@@ -244,7 +244,7 @@ export default function QRCodeForm({
                 </FormControl>
                 <Divider bg="black" px="4" orientation="horizontal"></Divider>
                 <FormControl>
-                  <FormLabel fontSize="md" color={"#4A5568"} as={"b"}>
+                  <FormLabel fontSize="sm" color={"#4A5568"} as={"b"}>
                     Format{" "}
                     <Tooltip
                       hasArrow
@@ -274,7 +274,7 @@ export default function QRCodeForm({
 
                 {/* Advanced Settings */}
                 <FormControl>
-                  <FormLabel fontSize="md" color={"#4A5568"} as={"b"}>
+                  <FormLabel fontSize="sm" color={"#4A5568"} as={"b"}>
                     ECC{" "}
                     <Tooltip
                       hasArrow
