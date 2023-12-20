@@ -1,9 +1,11 @@
 import React from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Fade, Hinge } from "react-awesome-reveal";
+import { Tooltip } from "@chakra-ui/react";
 import {
   Box,
   Button,
+  Divider,
   FormControl,
   FormLabel,
   Input,
@@ -22,6 +24,7 @@ import {
 } from "@chakra-ui/react";
 
 import "./Form.css";
+import { InfoIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 export default function QRCodeForm({
   handleFormSubmit,
   handleInputChange,
@@ -96,7 +99,17 @@ export default function QRCodeForm({
             <TabPanel>
               <VStack spacing={2}>
                 <FormControl>
-                  <FormLabel fontSize="sm">Color</FormLabel>
+                  <FormLabel fontSize="sm">
+                    Color{" "}
+                    <Tooltip
+                      hasArrow
+                      label="Color of the eyes"
+                      bg="gray.300"
+                      color="black"
+                    >
+                      <InfoOutlineIcon />
+                    </Tooltip>
+                  </FormLabel>
                   <Input
                     className="colorSelect"
                     type="color"
@@ -108,7 +121,17 @@ export default function QRCodeForm({
                 </FormControl>
 
                 <FormControl>
-                  <FormLabel fontSize="sm">Background Color</FormLabel>
+                  <FormLabel fontSize="sm">
+                    Background Color{" "}
+                    <Tooltip
+                      hasArrow
+                      label="Color of the background "
+                      bg="gray.300"
+                      color="black"
+                    >
+                      <InfoOutlineIcon />
+                    </Tooltip>
+                  </FormLabel>
                   <Input
                     type="color"
                     name="backgroundColor"
@@ -122,7 +145,17 @@ export default function QRCodeForm({
             <TabPanel>
               <VStack spacing={2}>
                 <FormControl>
-                  <FormLabel fontSize="sm">Size</FormLabel>
+                  <FormLabel fontSize="md" color={"#4A5568"} as={"b"}>
+                    Size{" "}
+                    <Tooltip
+                      hasArrow
+                      label="Size of the QR code image"
+                      bg="gray.300"
+                      color="black"
+                    >
+                      <InfoOutlineIcon />
+                    </Tooltip>
+                  </FormLabel>
                   <Slider
                     name="size"
                     min={200}
@@ -145,7 +178,17 @@ export default function QRCodeForm({
                 </FormControl>
 
                 <FormControl>
-                  <FormLabel fontSize="sm">QZone (1-100)</FormLabel>
+                  <FormLabel fontSize="md" color={"#4A5568"} as={"b"}>
+                    QZone{" "}
+                    <Tooltip
+                      hasArrow
+                      label="Thickness of a margin - (1-100)"
+                      bg="gray.300"
+                      color="black"
+                    >
+                      <InfoOutlineIcon />
+                    </Tooltip>
+                  </FormLabel>
                   <Slider
                     name="qzone"
                     min={1}
@@ -168,7 +211,17 @@ export default function QRCodeForm({
                 </FormControl>
 
                 <FormControl>
-                  <FormLabel fontSize="sm">Margin (1-50)</FormLabel>
+                  <FormLabel fontSize="md" color={"#4A5568"} as={"b"}>
+                    Margin{" "}
+                    <Tooltip
+                      hasArrow
+                      label="Thickness of a margin in pixels (1-50)"
+                      bg="gray.300"
+                      color="black"
+                    >
+                      <InfoOutlineIcon />
+                    </Tooltip>{" "}
+                  </FormLabel>
                   <Slider
                     name="margin"
                     min={1}
@@ -189,9 +242,19 @@ export default function QRCodeForm({
                     {formData.margin}px
                   </Text>
                 </FormControl>
-
+                <Divider bg="black" px="4" orientation="horizontal"></Divider>
                 <FormControl>
-                  <FormLabel fontSize="sm">Format</FormLabel>
+                  <FormLabel fontSize="md" color={"#4A5568"} as={"b"}>
+                    Format{" "}
+                    <Tooltip
+                      hasArrow
+                      label="Image Output Format"
+                      bg="gray.300"
+                      color="black"
+                    >
+                      <InfoOutlineIcon />
+                    </Tooltip>
+                  </FormLabel>
                   <Select
                     name="format"
                     value={formData.format}
@@ -211,8 +274,16 @@ export default function QRCodeForm({
 
                 {/* Advanced Settings */}
                 <FormControl>
-                  <FormLabel fontSize="sm">
-                    ECC (Error Correction Level)
+                  <FormLabel fontSize="md" color={"#4A5568"} as={"b"}>
+                    ECC{" "}
+                    <Tooltip
+                      hasArrow
+                      label="Error Correction"
+                      bg="gray.300"
+                      color="black"
+                    >
+                      <InfoOutlineIcon />
+                    </Tooltip>
                   </FormLabel>
                   <Select
                     name="ecc"
