@@ -1,7 +1,7 @@
 {
   "name": "QR Code Generator By Hasindu",
   "displayName": "QR Generator",
-  "homepage": "http://qr.hasindu.me",
+  "homepage": "https://hrtechplus.github.io/QR-Code-Generator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
