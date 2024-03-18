@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button, Stack } from "react-bootstrap";
+
 import Main from "./components/Main";
 import About from "./components/About";
 import Instrcution from "./components/Instrcution";
